@@ -1,0 +1,69 @@
+{
+  "namespace": "com.cbua.address.avro",
+  "protocol": "AddressService",
+  "types": [
+    {
+      "name": "CreateAddress",
+      "type": "record",
+      "fields": [
+        {
+          "name": "addressOne",
+          "type": "string"
+        },
+        {
+          "name": "addressTwo",
+          "type": "string"
+        },
+        {
+          "name": "city",
+          "type": "string"
+        },
+        {
+          "name": "zip",
+          "type": "int"
+        },
+        {
+          "name": "country",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "messages": {
+    "createAddress": {
+      "request": [
+        {
+          "name": "createAddress",
+          "type": "CreateAddress"
+        }
+      ],
+      "response": "string"
+    },
+    "addUserToAddress": {
+      "request": [
+        {
+          "name": "addressId",
+          "type": "string"
+        },
+        {
+          "name": "userId",
+          "type": "string"
+        }
+      ],
+      "response": "null"
+    },
+    "getUserIdsByCountry": {
+      "request": [
+        {
+          "name": "country",
+          "type": "string"
+        }
+      ],
+      "response": {
+        "type": "array",
+        "items": "string",
+        "default": []
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+dependencies {
+    api project(":cbua:cbua-logging")
+    api project(":cbua-user:user-schema")
+
+    implementation "org.springframework.boot:spring-boot-starter"
+    implementation "org.apache.avro:avro-grpc"
+
+    implementation "io.grpc:grpc-core"
+    implementation "io.grpc:grpc-netty"
+    implementation "io.grpc:grpc-stub"
+}

@@ -1,0 +1,6 @@
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter"
+    implementation 'io.grpc:grpc-core'
+    implementation 'io.grpc:grpc-netty'
+    implementation 'io.grpc:grpc-stub'
+}

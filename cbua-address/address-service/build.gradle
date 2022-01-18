@@ -1,0 +1,25 @@
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    api project(":cbua:cbua-jpa")
+    api project(":cbua:cbua-grpc")
+    api project(":cbua-address:address-schema")
+
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.apache.avro:avro"
+    implementation "org.apache.avro:avro-ipc"
+    implementation "org.apache.avro:avro-grpc"
+
+    implementation 'io.grpc:grpc-core'
+    implementation 'io.grpc:grpc-netty'
+    implementation 'io.grpc:grpc-stub'
+
+    implementation "org.postgresql:postgresql"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+}
+

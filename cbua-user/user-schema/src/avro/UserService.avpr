@@ -1,0 +1,96 @@
+{
+  "namespace": "com.cbua.user.avro",
+  "protocol": "UserService",
+  "types": [
+    {
+      "name": "CreateUser",
+      "type": "record",
+      "fields": [
+        {
+          "name": "firstName",
+          "type": "string"
+        },
+        {
+          "name": "lastName",
+          "type": "string"
+        },
+        {
+          "name": "email",
+          "type": "string"
+        },
+        {
+          "name": "password",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "UserDetails",
+      "type": "record",
+      "fields": [
+        {
+          "name": "firstName",
+          "type": "string"
+        },
+        {
+          "name": "lastName",
+          "type": "string"
+        },
+        {
+          "name": "email",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "messages": {
+    "createUser": {
+      "request": [
+        {
+          "name": "createUser",
+          "type": "CreateUser"
+        }
+      ],
+      "response": "string"
+    },
+    "getUser": {
+      "request": [
+        {
+          "name": "userId",
+          "type": "string",
+          "logicalId": "UUID"
+        }
+      ],
+      "response": "UserDetails"
+    },
+    "addAddressToUser": {
+      "request": [
+        {
+          "name": "userId",
+          "type": "string"
+        },
+        {
+          "name": "addressId",
+          "type": "string"
+        }
+      ],
+      "response": "null"
+    },
+    "getUsers": {
+      "request": [
+        {
+          "name": "userIds",
+          "type": {
+            "type": "array",
+            "items": "string"
+          }
+        }
+      ],
+      "response": {
+        "type": "array",
+        "items": "UserDetails",
+        "default": []
+      }
+    }
+  }
+}

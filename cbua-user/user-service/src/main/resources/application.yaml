@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    password: ${DATABASE_PASSWORD:cbua-user}
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/cbua-user}
+    username: ${DATABASE_USERNAME:cbua-user}
+  groovy:
+    template:
+      check-template-location: false
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+    show-sql: true

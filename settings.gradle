@@ -1,0 +1,31 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+
+rootProject.name = 'user-app'
+
+include 'cbua'
+
+//libs
+include 'cbua:cbua-logging'
+include 'cbua:cbua-jpa'
+include 'cbua:cbua-grpc'
+
+// projects
+include 'cbua-user'
+include 'cbua-user:user-service'
+include 'cbua-user:user-schema'
+include 'cbua-user:user-client'
+
+include 'cbua-address'
+include 'cbua-address:address-service'
+include 'cbua-address:address-schema'
+include 'cbua-address:address-client'
+
+include 'cbua-gateway'
+include 'cbua-gateway:service'
+

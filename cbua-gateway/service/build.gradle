@@ -1,0 +1,24 @@
+apply plugin: "java"
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    api project(":cbua:cbua-logging")
+    api project(":cbua-address:address-client")
+    api project(":cbua-user:user-client")
+
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+
+    implementation "org.apache.avro:avro"
+    implementation "org.apache.avro:avro-ipc"
+    implementation "org.apache.avro:avro-grpc"
+
+    implementation 'io.grpc:grpc-core'
+    implementation 'io.grpc:grpc-netty'
+    implementation 'io.grpc:grpc-stub'
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+}
